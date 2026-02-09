@@ -4,7 +4,7 @@
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
 const navClose = document.getElementById('nav-close');
-const navLinks = document.querySelectorAll('.nav-link');
+const navigationLinks = document.querySelectorAll('.nav-link');
 
 // Show menu
 if (navToggle) {
@@ -21,7 +21,7 @@ if (navClose) {
 }
 
 // Close menu when clicking on nav links
-navLinks.forEach(link => {
+navigationLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
     });
@@ -464,8 +464,8 @@ if (whatsappFloat) {
 }
 
 // Add active state to navigation on mobile touch
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
+const allNavLinks = document.querySelectorAll('.nav-link');
+allNavLinks.forEach(link => {
     link.addEventListener('touchstart', function() {
         this.style.backgroundColor = 'rgba(255, 215, 0, 0.2)';
     });
