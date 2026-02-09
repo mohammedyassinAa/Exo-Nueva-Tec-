@@ -28,6 +28,21 @@ navLinks.forEach(link => {
 });
 
 /* ========================================
+   SCROLL PROGRESS INDICATOR
+   ======================================== */
+function updateScrollProgress() {
+    const scrollProgress = document.getElementById('scrollProgress');
+    if (scrollProgress) {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+    }
+}
+
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+/* ========================================
    ACTIVE LINK ON SCROLL
    ======================================== */
 const sections = document.querySelectorAll('section[id]');
@@ -443,23 +458,13 @@ function animateCounter(element, target, duration = 2000) {
 // Enhanced WhatsApp button animation
 const whatsappFloat = document.querySelector('.whatsapp-float');
 if (whatsappFloat) {
-    let isAnimating = false;
-    
-    setInterval(() => {
-        if (!isAnimating) {
-            whatsappFloat.style.transform = 'scale(1.2)';
-            setTimeout(() => {
-                whatsappFloat.style.transform = 'scale(1)';
-            }, 200);
-        }
-    }, 3000);
-    
+    // Add pulse effect with interaction awareness
     whatsappFloat.addEventListener('mouseenter', () => {
-        isAnimating = true;
+        whatsappFloat.style.animation = 'none';
     });
     
     whatsappFloat.addEventListener('mouseleave', () => {
-        isAnimating = false;
+        whatsappFloat.style.animation = 'pulse-whatsapp 2s infinite';
     });
 }
 
