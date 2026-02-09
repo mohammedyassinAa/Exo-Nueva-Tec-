@@ -8,11 +8,11 @@
 }
 
 :root {
-    /* Colors - Luxury Theme */
-    --color-primary: #D4AF37; /* Gold */
-    --color-primary-dark: #B8942A;
+    /* Colors - Updated to match homebackground.jpeg */
+    --color-primary: #FFD700; /* Bright Gold */
+    --color-primary-dark: #DAA520;
     --color-secondary: #1a1a1a; /* Rich Black */
-    --color-accent: #C0C0C0; /* Silver */
+    --color-accent: #8B7355; /* Warm Brown */
     --color-white: #FFFFFF;
     --color-light-gray: #F5F5F5;
     --color-medium-gray: #666666;
@@ -162,7 +162,7 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     z-index: 1000;
-    transition: all var(--transition-normal);
+    transition: all var(--transition-normal), transform 0.3s ease;
 }
 
 .nav {
@@ -299,7 +299,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-dark-gray) 100%);
+    background: url('homebackground.jpeg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
     padding-top: var(--header-height);
     overflow: hidden;
 }
@@ -311,15 +313,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(192, 192, 192, 0.1) 0%, transparent 50%);
+    background: rgba(26, 26, 26, 0.5);
     pointer-events: none;
+    z-index: 0;
 }
 
 .hero-container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-content {
@@ -726,6 +727,17 @@ body {
     gap: var(--spacing-lg);
 }
 
+.contact-map {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+.contact-map iframe {
+    display: block;
+}
+
 .contact-info {
     display: grid;
     gap: 1.5rem;
@@ -1074,6 +1086,135 @@ body {
 
 [data-aos="fade-left"].aos-animate {
     transform: translateX(0);
+}
+
+/* Enhanced Button Animations */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Card Hover Effects */
+.brand-card,
+.category-card,
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-card::after,
+.category-card::after,
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.brand-card:hover::after,
+.category-card:hover::after,
+.service-card:hover::after {
+    left: 100%;
+}
+
+/* Pulse Animation for Icons */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.brand-logo,
+.service-icon,
+.contact-icon {
+    animation: pulse 2s infinite;
+}
+
+.brand-card:hover .brand-logo,
+.service-card:hover .service-icon,
+.contact-card:hover .contact-icon {
+    animation: none;
+    transform: scale(1.1);
+}
+
+/* Smooth Image Zoom on Hover */
+.category-image,
+.about-card {
+    transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-image {
+    transform: scale(1.05);
+}
+
+/* Link Hover Animation */
+.category-link,
+.footer-links a {
+    position: relative;
+}
+
+.category-link::after,
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.category-link:hover::after,
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.hero-content {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Parallax Effect on Mobile */
+@media screen and (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+        background-position: center center;
+    }
 }
 
 /* ========================================
