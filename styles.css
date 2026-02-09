@@ -1270,16 +1270,7 @@ body {
     
     /* Grids */
     .brands-grid {
-        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
-    }
-    
-    .brand-logo-wrapper {
-        height: 150px;
-    }
-    
-    .brand-name {
-        font-size: 1.6rem;
     }
     
     .categories-grid {
