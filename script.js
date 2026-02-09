@@ -4,7 +4,7 @@
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
 const navClose = document.getElementById('nav-close');
-const navigationLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link');
 
 // Show menu
 if (navToggle) {
@@ -21,7 +21,7 @@ if (navClose) {
 }
 
 // Close menu when clicking on nav links
-navigationLinks.forEach(link => {
+navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
     });
@@ -464,8 +464,7 @@ if (whatsappFloat) {
 }
 
 // Add active state to navigation on mobile touch
-const allNavLinks = document.querySelectorAll('.nav-link');
-allNavLinks.forEach(link => {
+navLinks.forEach(link => {
     link.addEventListener('touchstart', function() {
         this.style.backgroundColor = 'rgba(255, 215, 0, 0.2)';
     });
@@ -481,19 +480,21 @@ allNavLinks.forEach(link => {
 let lastScrollTop = 0;
 const header = document.getElementById('header');
 
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down
-        header.style.transform = 'translateY(-100%)';
-    } else {
-        // Scrolling up
-        header.style.transform = 'translateY(0)';
-    }
-    
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-}, { passive: true });
+if (header) {
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Scrolling down
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling up
+            header.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, { passive: true });
+}
 
 // Add touch feedback for all interactive elements on mobile
 if ('ontouchstart' in window) {

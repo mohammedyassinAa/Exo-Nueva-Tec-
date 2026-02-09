@@ -1153,12 +1153,13 @@ body {
 .service-icon,
 .contact-icon {
     animation: pulse 2s infinite;
+    animation-play-state: paused;
 }
 
 .brand-card:hover .brand-logo,
 .service-card:hover .service-icon,
 .contact-card:hover .contact-icon {
-    animation: none;
+    animation-play-state: running;
     transform: scale(1.1);
 }
 
