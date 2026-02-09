@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/212666342345?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20vos%20montres%20de%20luxe" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -84,51 +87,79 @@
     <section class="brands section" id="brands">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Nos Marques Prestigieuses</h2>
+                <h2 class="section-title">Découvrir les marques</h2>
                 <p class="section-subtitle">Des marques de renommée mondiale pour votre collection</p>
             </div>
             <div class="brands-grid">
                 <div class="brand-card" data-aos="fade-up">
-                    <div class="brand-logo">
-                        <i class="fas fa-crown"></i>
+                    <div class="brand-logo-wrapper">
+                        <img src="brands/seiko.svg" alt="Seiko" class="brand-logo-img">
                     </div>
                     <h3 class="brand-name">Seiko</h3>
                     <p class="brand-description">Excellence japonaise depuis 1881</p>
                 </div>
-                <div class="brand-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="brand-logo">
-                        <i class="fas fa-gem"></i>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="brand-logo-wrapper">
+                        <img src="brands/beverly-hills.svg" alt="Beverly Hills" class="brand-logo-img">
                     </div>
                     <h3 class="brand-name">Beverly Hills</h3>
                     <p class="brand-description">Luxe et sophistication</p>
                 </div>
-                <div class="brand-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="brand-logo">
-                        <i class="fas fa-star"></i>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="brand-logo-wrapper">
+                        <img src="brands/festina.svg" alt="Festina" class="brand-logo-img">
                     </div>
                     <h3 class="brand-name">Festina</h3>
                     <p class="brand-description">Tradition horlogère suisse</p>
                 </div>
-                <div class="brand-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="brand-logo">
-                        <i class="fas fa-chess-king"></i>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="brand-logo-wrapper">
+                        <img src="brands/boss.svg" alt="Boss" class="brand-logo-img">
                     </div>
                     <h3 class="brand-name">Boss</h3>
                     <p class="brand-description">Élégance allemande</p>
                 </div>
-                <div class="brand-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="brand-logo">
-                        <i class="fas fa-medal"></i>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="brand-logo-wrapper">
+                        <img src="brands/cerutti.svg" alt="Cerutti" class="brand-logo-img">
                     </div>
                     <h3 class="brand-name">Cerutti</h3>
                     <p class="brand-description">Raffinement italien</p>
                 </div>
-                <div class="brand-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="brand-logo">
-                        <i class="fas fa-award"></i>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="brand-logo-wrapper">
+                        <img src="brands/citizen.svg" alt="Citizen" class="brand-logo-img">
                     </div>
-                    <h3 class="brand-name">Autres Marques</h3>
-                    <p class="brand-description">Et bien plus encore...</p>
+                    <h3 class="brand-name">Citizen</h3>
+                    <p class="brand-description">Innovation technologique</p>
+                </div>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="brand-logo-wrapper">
+                        <img src="brands/casio.svg" alt="Casio" class="brand-logo-img">
+                    </div>
+                    <h3 class="brand-name">Casio</h3>
+                    <p class="brand-description">Technologie et performance</p>
+                </div>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="brand-logo-wrapper">
+                        <img src="brands/orient.svg" alt="Orient" class="brand-logo-img">
+                    </div>
+                    <h3 class="brand-name">Orient</h3>
+                    <p class="brand-description">Artisanat japonais</p>
+                </div>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="brand-logo-wrapper">
+                        <img src="brands/tissot.svg" alt="Tissot" class="brand-logo-img">
+                    </div>
+                    <h3 class="brand-name">Tissot</h3>
+                    <p class="brand-description">Précision suisse</p>
+                </div>
+                <div class="brand-card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="brand-logo-wrapper">
+                        <img src="brands/tag-heuer.svg" alt="TAG Heuer" class="brand-logo-img">
+                    </div>
+                    <h3 class="brand-name">TAG Heuer</h3>
+                    <p class="brand-description">Héritage sportif suisse</p>
                 </div>
             </div>
         </div>
@@ -386,6 +417,11 @@
                         <li>Festina</li>
                         <li>Boss</li>
                         <li>Cerutti</li>
+                        <li>Citizen</li>
+                        <li>Casio</li>
+                        <li>Orient</li>
+                        <li>Tissot</li>
+                        <li>TAG Heuer</li>
                     </ul>
                 </div>
                 <div class="footer-section">
